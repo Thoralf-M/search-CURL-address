@@ -2,7 +2,7 @@ const IOTA = require('iota.lib.js')
 const iota = new IOTA()
 
 const seed = "EXAMPLESEEDEXAMPLESEEDEXAMPLESEEDEXAMPLESEEDEXAMPLESEEDEXAMPLESEEDEXAMPLESEED9999" // seed
-const searchedAddress = 'KHAKWQYKYCAJNLUMHILEVE99FDYUVRESZMFOPXBERNMOSGEIXCHPXCXJFMGJRBWYFITB9VEJIWKOGZFQK' //known address
+const searchedAddress = 'FSYKNELJC9HQZORR9GLNFCZXSDBHNFINOSBERDSSRVMSUVSTQSHFQXQMDAH9SUCKZVVXLMIMYC9XTGIFB' //known address
 const amount = 30 // amount of addresses
 const seclvl = 2 // security level can be 1, 2, or 3, Trinity uses 2
 
@@ -14,7 +14,7 @@ const options = {
   checksum: false
 }
 
-async function addressen(amount) {
+async function addresses() {
   for (var j = 0; j < amount; j++) {
     options.index = j;
     let address = iota.api.getNewAddress(seed, options, (err, address) => {
@@ -34,4 +34,4 @@ async function addressen(amount) {
 
 //run
 console.log("Generate adresses from index 0 - " + amount)
-addressen(amount)
+addresses()
